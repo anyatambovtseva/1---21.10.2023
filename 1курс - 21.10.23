@@ -1,0 +1,170 @@
+(1)
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int s, a, b;
+    cout << "введите двухзначное число: ";
+    cin >> s;
+    if ((s > 9) && (s < 100))
+    {
+        a = s % 10;
+        b = s / 10;
+        if (a > b)
+            cout << a << "-наибольший, " << b << "-наименьший";
+        if (a < b)
+            cout << a << "-наименьший," << b << "-наибольший";
+        if (a == b)
+            cout << "цифры в числе равны";
+    }
+    else
+        cout << "число не удовлетворяет  условию";
+    return 0;
+}
+
+
+(2)
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b, s, m, n;
+	cout << "введите начальный год: ";
+	cin >> a;
+	cout << "введите конечный год: ";
+	cin >> b;
+	m = a / 4;
+	n = b / 4;
+	if (((b % 4 == 0) && (b % 100 != 0)) || (b % 400 == 0))
+		s = n - m + 1;
+	else
+		s = n - m;
+	cout << s;
+	return 0;
+}
+
+
+(3)
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int s, x, y;
+    cout << "введите x = ";
+    cin >> x;
+    cout << "введите y = ";
+    cin >> y;
+    s = pow((1 - tan(x)), (pow(tan(x), -1))) + cos(x - y);
+    cout << s;
+return 0;
+}
+
+
+(4)
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int n, k1;
+    float x, y;
+    cout << "введите количество людей: ";
+    cin >> n;
+    cout << "рейтинг фильма на данный момент: ";
+    cin >> x;
+    cout << "желаемый рейтинг: ";
+    cin >> y;
+    k1 = (n * (y - x)) / (1 - y);
+    cout <<"необходимо поставить " << k1 << " единиц";
+    return 0;
+}
+
+
+(5)
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int x, y;
+    cout << "координата x=";
+    cin >> x;
+    cout << "координата y=";
+    cin >> y;
+    if (x * y != 0)
+    {
+        if ((x > 0) && (y > 0))
+            cout << "точка принадлежит первой четверти";
+        if ((x < 0) && (y > 0))
+            cout << "точка принадлежит второй четверти";
+        if ((x < 0) && (y < 0))
+            cout << "точка принадлежит третьей четверти";
+        if ((x > 0) && (y < 0))
+            cout << "точка принадлежит четвертой четверти";
+    }
+    else
+        cout << "координаты не удовлетворяют условию задачи";
+    return 0;
+}
+
+
+(6)
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int s, a, b, c;
+    cout << "введите трехзначное число: ";
+    cin >> s;
+    if ((s > 99) && (s < 1000))
+    {
+        a = s / 100;
+        b = s / 10 % 10;
+        c = s % 10;
+        if ((a == b) || (a == c) || (b == c))
+            cout << "в числе есть одинаковые цифры";
+        else
+            cout << "в числе нет одинаковых цифр";
+    }
+    else
+        cout << "число не удовлетворяет условию задачи";
+    return 0;
+}
+
+
+(7)
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int s, m, n, a, b;
+	cout << "введите пятизначное число: ";
+	cin >> s;
+	if ((s < 9999) || (s > 100000))
+	{
+		cout << "число не удовлетворяет условию задачи";
+	}
+	else
+		{
+		m = s % 10;
+		n = s / 10000;
+		if (m == n)
+		{
+			a = s % 100 / 10;
+			b = s / 1000 % 10;
+			if (a == b)
+				cout << s << " - палиндром";
+			else
+				cout << s << " - не палиндром";
+		}
+		else
+			cout << s << " - не палиндром";
+		}
+	return 0;
+}
